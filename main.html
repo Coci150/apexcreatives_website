@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Creatives Limited · advertising & multimedia</title>
+    <!-- Font Awesome 5 (free) for clean icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <!-- Google Fonts: Inter + Space Grotesk for modern, senior dev vibe -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+            color: #1a1e2b;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* containers & layout */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* header / navigation — slick & sticky */
+        .navbar {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 76px;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 1.9rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(130deg, #0B0F1C 0%, #2D1F3A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        .logo span {
+            background: linear-gradient(145deg, #4A2F5C, #10141F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 500;
+            font-size: 1.2rem;
+            display: inline-block;
+            margin-left: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1e2434;
+            font-size: 1rem;
+            transition: 0.2s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+        }
+        .nav-links a:hover {
+            color: #562B7A;
+            border-bottom-color: #8b5ec6;
+        }
+        .nav-links .btn-outline {
+            border: 1.5px solid #1e1e2f;
+            border-radius: 40px;
+            padding: 0.5rem 1.4rem;
+            background: transparent;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .nav-links .btn-outline:hover {
+            background: #1e1e2f;
+            color: white;
+            border-color: #1e1e2f;
+        }
+
+        /* hero section — phantom vibe */
+        .hero {
+            padding: 5rem 0 4rem 0;
+            background: radial-gradient(circle at 80% 30%, rgba(148, 97, 186, 0.08), transparent 40%);
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            flex: 1 1 380px;
+        }
+        .hero-badge {
+            background: #e3def7;
+            color: #341f4b;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.3px;
+            border: 1px solid #cbb9e4;
+        }
+        .hero-content h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: #0c0f19;
+            margin-bottom: 1.5rem;
+        }
+        .hero-highlight {
+            background: linear-gradient(120deg, #1F2937, #2e1b42);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #2d3445;
+            max-width: 520px;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            border-left: 4px solid #8b5ec6;
+            padding-left: 1.5rem;
+        }
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: #1E1A2F;
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.15s;
+            box-shadow: 0 10px 18px -10px #1e1a2f70;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-primary:hover {
+            background: #34284a;
+            transform: translateY(-3px);
+            box-shadow: 0 20px 22px -12px #2e1d45;
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 1.5px solid #1f2937;
+            color: #1f2937;
+            font-weight: 600;
+            padding: 0.9rem 2.3rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-secondary:hover {
+            background: #f1eefe;
+            border-color: #562B7A;
+        }
+
+        .hero-visual {
+            flex: 1 1 340px;
+            background: linear-gradient(145deg, #ffffff, #f3effa);
+            border-radius: 50% 50% 30% 70% / 40% 30% 70% 60%;
+            padding: 1.8rem 2rem;
+            box-shadow: 30px 40px 50px -30px #bba5d3;
+            border: 2px solid rgba(255,255,255,0.8);
+            text-align: center;
+        }
+        .hero-visual i {
+            font-size: 5rem;
+            color: #3f2d54;
+            margin: 1rem;
+        }
+        .hero-visual h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 1.8rem;
+        }
+        .hero-visual p {
+            color: #4b3c5c;
+        }
+
+        /* clients / featured */
+        .clients {
+            background: white;
+            padding: 2rem 0;
+            border-block: 1px solid #e9e4f0;
+        }
+        .client-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            opacity: 0.7;
+        }
+        .client-grid span {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #241b30;
+            letter-spacing: 0.5px;
+        }
+        .client-grid i {
+            font-size: 2rem;
+            color: #433b55;
+            margin: 0 0.5rem;
+        }
+
+        /* services section — cards  */
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        .section-sub {
+            color: #484d62;
+            max-width: 620px;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+        .services {
+            padding: 5rem 0;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: white;
+            padding: 2.2rem 1.8rem;
+            border-radius: 30px;
+            box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.1);
+            transition: all 0.25s ease;
+            border: 1px solid #f1ebfa;
+        }
+        .card:hover {
+            transform: scale(1.02);
+            border-color: #c2add9;
+            box-shadow: 0 25px 30px -12px #a187bb70;
+        }
+        .card-icon {
+            background: #f0e9fc;
+            width: 56px;
+            height: 56px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.8rem;
+        }
+        .card-icon i {
+            font-size: 2.2rem;
+            color: #3b2952;
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+        .card p {
+            color: #414a5c;
+        }
+
+        /* Showreel / featured video section — multimedia vibe */
+        .showreel {
+            background: #14131c;
+            color: white;
+            padding: 5rem 0;
+            border-radius: 3rem 3rem 0 0;
+            margin-top: 2rem;
+        }
+        .showreel .section-title {
+            color: white;
+        }
+        .showreel .section-sub {
+            color: #cbc3db;
+        }
+        .video-placeholder {
+            background: #231f31;
+            border-radius: 40px;
+            padding: 4rem 2rem;
+            text-align: center;
+            border: 1px solid #4f4166;
+            backdrop-filter: blur(4px);
+            box-shadow: inset 0 0 30px #0f0d17;
+            margin: 2rem 0 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .video-placeholder i {
+            font-size: 5rem;
+            color: #bfa7e6;
+            margin-bottom: 1rem;
+        }
+        .video-placeholder p {
+            font-size: 1.4rem;
+            font-weight: 300;
+        }
+        .video-placeholder small {
+            color: #a798c2;
+        }
+
+        /* about / phantom essence */
+        .about {
+            padding: 5rem 0;
+            background: #ffffff;
+        }
+        .about-grid {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .about-content {
+            flex: 1 1 300px;
+        }
+        .about-content h2 {
+            font-size: 2.3rem;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .about-highlight {
+            font-size: 1.2rem;
+            color: #1d1330;
+            background: #ede7fc;
+            padding: 1.5rem;
+            border-radius: 24px;
+            margin: 2rem 0;
+            border-left: 6px solid #653b92;
+        }
+        .stats {
+            display: flex;
+            gap: 2rem;
+        }
+        .stat-item {
+            font-weight: 600;
+        }
+        .stat-item .number {
+            font-size: 2rem;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #361b4e;
+        }
+
+        /* contact / quote form */
+        .contact {
+            padding: 4rem 0 6rem;
+            background: #f5f1fb;
+        }
+        .contact-container {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            background: white;
+            border-radius: 2.5rem;
+            padding: 3rem;
+            box-shadow: 0 25px 40px -25px #b7a1cf;
+        }
+        .contact-info {
+            flex: 1 1 240px;
+        }
+        .contact-info h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        .contact-info .email {
+            font-size: 1.3rem;
+            margin: 1.5rem 0;
+            color: #1f1b2b;
+            border-bottom: 2px dotted #b59dd1;
+            display: inline-block;
+        }
+        .contact-form {
+            flex: 2 1 360px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .input-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .input-group input, .contact-form textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 1px solid #dbd0e9;
+            border-radius: 50px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: #fcfaff;
+        }
+        .input-group input {
+            flex: 1 1 200px;
+        }
+        .contact-form textarea {
+            border-radius: 30px;
+            resize: vertical;
+        }
+        .contact-form button {
+            width: fit-content;
+            padding: 1rem 2.8rem;
+        }
+
+        /* footer */
+        .footer {
+            background: #12121a;
+            color: #d7d2e6;
+            padding: 2.5rem 0;
+            border-top: 1px solid #342d42;
+        }
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .footer a {
+            color: #cfc2ea;
+            text-decoration: none;
+            margin-left: 2rem;
+        }
+        .footer a:hover {
+            color: white;
+        }
+
+        /* responsive touches */
+        @media (max-width: 680px) {
+            .nav-links { gap: 1.2rem; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-container { flex-wrap: wrap; height: auto; padding: 1rem 0; }
+            .navbar { position: relative; }
+        }
+    </style>
+</head>
+<body>
+    <!-- sticky navigation – apex creatives limited -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">APEX<span>CREATIVES</span></div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#services">Work</a>
+                <a href="#about">Studio</a>
+                <a href="#contact" class="btn-outline">Start a project</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- hero section – we are Apex Creatives -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fas fa-bolt" style="margin-right: 6px;"></i> MULTIMEDIA · ADVERTISING</span>
+                <h1>Capture attention, <span class="hero-highlight">Apex sharp.</span></h1>
+                <p class="hero-desc">Apex Creatives Limited crafts immersive campaigns & digital experiences that linger longer than memory.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn-primary"><i class="fas fa-pen-fancy"></i> Create with us</a>
+                    <a href="#showreel" class="btn-secondary"><i class="fas fa-play"></i> Showreel</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <i class="fas fa-clapperboard"></i>
+                <h3>ad · film · virtual</h3>
+                <p>since 2017 · zambia / namibia / south africa</p>
+                <div style="margin-top: 1rem; font-size: 2rem; letter-spacing: 6px;"><i class="fas fa-circle" style="font-size: 0.5rem; vertical-align: middle;"></i>    <i class="fas fa-circle" style="font-size: 0.5rem; vertical-align: middle;"></i>    <i class="fas fa-circle" style="font-size: 0.5rem; vertical-align: middle;"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- social proof / client zone -->
+    <section class="clients">
+        <div class="container client-grid">
+            <span><i class="fas fa-bolt"></i> DREAMTEAM</span>
+            <span><i class="fas fa-globe"></i> SPECTRUM GLOBAL</span>
+            <span><i class="fas fa-crown"></i> ROYAL ELITE</span>
+            <span><i class="fas fa-video"></i> VIVID STUDIOS</span>
+            <span><i class="fas fa-wave-square"></i> FUSION X</span>
+        </div>
+    </section>
+
+    <!-- core services – multimedia & advertising -->
+    <section id="services" class="services container">
+        <h2 class="section-title">Sharp campaigns · lasting echoes</h2>
+        <p class="section-sub">From concept to reality — we produce advertising that cuts through the noise.</p>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-film"></i></div>
+                <h3>Video production</h3>
+                <p>Cinematic commercials, brand films, and immersive AR/VR experiences.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-bullhorn"></i></div>
+                <h3>Media strategy</h3>
+                <p>Data-driven planning & buying. We put your ad where eyes linger.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-cubes"></i></div>
+                <h3>Digital / OOH</h3>
+                <p>Programmatic, DOOH, and interactive installations. Apex reach.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-magic"></i></div>
+                <h3>Creative concept</h3>
+                <p>Storyboarding, art direction & viral hooks. We craft the unforgettable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- showreel / phantom in motion -->
+    <section id="showreel" class="showreel">
+        <div class="container">
+            <h2 class="section-title">APEX REEL 2025</h2>
+            <p class="section-sub">Multimedia that feels like another dimension — click to enter</p>
+            <div class="video-placeholder">
+                <i class="fas fa-circle-play"></i>
+                <p>▶ APEX SHOWREEL</p>
+                <small>advertising · film · extended reality</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- about / limited, but infinite -->
+    <section id="about" class="about container">
+        <div class="about-grid">
+            <div class="about-content">
+                <h2>We are <span style="background: #0b0e15; color: white; padding: 0.2rem 1rem;">Apex Creatives Limited</span></h2>
+                <p style="margin: 1.5rem 0 1rem; font-size: 1.2rem;">A lean team of directors, strategists, and digital artists. We partner with brands to create ads that  inspire.</p>
+                <div class="about-highlight">
+                    <i class="fas fa-quote-left" style="margin-right: 8px; opacity: 0.5;"></i> We don’t do noise. We do linger. Our campaigns stay in the cultural periphery — visible when it matters.
+                </div>
+                <div class="stats">
+                    <div class="stat-item"><span class="number">180+</span> <span style="color:#49425c;">campaigns</span></div>
+                    <div class="stat-item"><span class="number">34</span> <span style="color:#49425c;">awards</span></div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- contact section / start a project -->
+    <section id="contact" class="contact">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h3>Let’s make<br>something <span style="background: #000; color: white; padding: 0 0.5rem;">unforgettable</span></h3>
+                <div class="email"><i class="fas fa-envelope"></i> apexcreativesteam@gmail.com</div>
+                <p style="margin: 1rem 0;"><i class="fas fa-phone-alt"></i> +260967867223</p>
+                <p><i class="fas fa-map-pin"></i> 7703 Great East Road, Lusaka, Zambia</p>
+                <div style="margin-top: 2rem;">
+                    <i class="fab fa-instagram" style="font-size: 1.8rem; margin-right: 1rem;"></i>
+                    <i class="fab fa-vimeo-v" style="font-size: 1.8rem; margin-right: 1rem;"></i>
+                    <i class="fab fa-linkedin-in" style="font-size: 1.8rem;"></i>
+                </div>
+            </div>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('✨ Thank you. ApexCreatives will reach out within 24h.');">
+                <div class="input-group">
+                    <input type="text" placeholder="full name" required>
+                    <input type="email" placeholder="email" required>
+                </div>
+                <input type="text" placeholder="company / brand">
+                <textarea rows="3" placeholder="tell us about your campaign..."></textarea>
+                <button type="submit" class="btn-primary" style="border: none; cursor: pointer;"></i> Send Apex signal</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+            <span>© 2025 APEX CREATIVES LIMITED — all rights reserved</span>
+            <span>
+                <a href="#">Privacy</a>
+                <a href="#">Careers</a>
+                <a href="#contact">Contact</a>
+            </span>
+        </div>
+    </footer>
+
+    <!-- subtle interaction on showreel (just UX polish) -->
+    <script>
+        (function() {
+            const reel = document.querySelector('.video-placeholder');
+            if (reel) {
+                reel.addEventListener('click', () => {
+                    alert('🎬 Apex SHOWREEL — (demo: reel would open in a lightbox). Imagine bold motion work.');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
